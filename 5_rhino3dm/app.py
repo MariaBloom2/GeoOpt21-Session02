@@ -7,7 +7,7 @@ import geometry as geo
 #we also import random library to generate some randomness 
 import random as r
 
-#finally we bring rhino3dm to create rhino geometry in python
+#finally we bring rhino3dm to create rhino geometry in python (rg for rhinogeometry)
 import rhino3dm as rg
 
 app = Flask(__name__)

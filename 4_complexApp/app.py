@@ -1,7 +1,7 @@
 from flask import Flask
 import ghhops_server as hs
 
-#notice, we import another file as a library
+#notice, we import another file as if it would be a library
 import work as wk
 
 app = Flask(__name__)

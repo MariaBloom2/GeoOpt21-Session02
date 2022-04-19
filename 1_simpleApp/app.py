@@ -1,3 +1,4 @@
+from email.policy import default
 from flask import Flask
 import ghhops_server as hs
 
@@ -17,10 +18,11 @@ hops = hs.Hops(app)
     name = "MyComponent",
     inputs=[
         hs.HopsString("Name", "N", "Provide your name"),
-        hs.HopsInteger("Age", "A", "Provide your age")
+        hs.HopsInteger("Age", "A", "Provide your age", default = 38)
+    
     ],
     outputs=[
-       hs.HopsString("Text","T","Print name and age")
+       hs.HopsString("Texty","T","Print name and age")
     ]
 )
 def printNameAndAge(name, age):
