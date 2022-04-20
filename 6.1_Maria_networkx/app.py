@@ -9,8 +9,8 @@ hops = hs.Hops(app)
 
 
 @hops.component(
-    "/createGraph",
-    name = "Create Graph",
+    "/createGraphMaria",
+    name = "Create Graph Maria",
     inputs=[
         hs.HopsInteger("Count X", "X", "Number of node in X", hs.HopsParamAccess.ITEM, default= 1),
         hs.HopsInteger("Count Y", "Y", "Number of node in Y", hs.HopsParamAccess.ITEM, default= 1),
