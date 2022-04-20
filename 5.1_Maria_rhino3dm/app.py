@@ -3,40 +3,9 @@ from flask import Flask
 import ghhops_server as hs
 import rhino3dm
 
-
 # register hops app as middleware
 app = Flask(__name__)
 hops: hs.HopsFlask = hs.Hops(app)
-
-
-# flask app can be used for other stuff drectly
-@app.route("/help")
-def help():
-    return "Welcome to Grashopper Hops for CPython!"
-
-
-@hops.component(
-    "/binmult",
-    inputs=[hs.HopsNumber("A"), hs.HopsNumber("B")],
-    outputs=[hs.HopsNumber("Multiply")],
-)
-def BinaryMultiply(a: float, b: float):
-    return a * b
-
-
-@hops.component(
-    "/add",
-    name="Add",
-    nickname="Add",
-    description="Add numbers with CPython",
-    inputs=[
-        hs.HopsNumber("A", "A", "First number"),
-        hs.HopsNumber("B", "B", "Second number"),
-    ],
-    outputs=[hs.HopsNumber("Sum", "S", "A + B")]
-)
-def add(a: float, b: float):
-    return a + b
 
 
 @hops.component(
@@ -56,9 +25,9 @@ def pointat(curve: rhino3dm.Curve, t=0.0):
 
 
 @hops.component(
-    "/srf4pt",
+    "/surface4points",
     name="4Point Surface",
-    nickname="Srf4Pt",
+    nickname="surface4points",
     description="Create ruled surface from four points",
     inputs=[
         hs.HopsPoint("Corner A", "A", "First corner"),
